@@ -21,7 +21,8 @@ public struct PrivateKey {
     private var keyType: PrivateKeyType
     
     public init(seed: Data, coin: Coin) {
-        let output = Crypto.HMACSHA512(key: "Bitcoin seed".data(using: .ascii)!, data: seed)
+       // let output = Crypto.HMACSHA512(key: "Bitcoin seed".data(using: .ascii)!, data: seed)
+        let output = Crypto.HMACSHA512(key: coin.seedString.data(using: .ascii)!, data: seed)
         self.raw = output[0..<32]
         self.chainCode = output[32..<64]
         self.index = 0
@@ -94,6 +95,8 @@ public struct PrivateKey {
         case .bitcoin: fallthrough
         case .litecoin: fallthrough
         case .dash: fallthrough
+        case .exos: fallthrough
+        case .ruta: fallthrough
         case .bitcoinCash:
             return self.wifCompressed()
         case .dogecoin:

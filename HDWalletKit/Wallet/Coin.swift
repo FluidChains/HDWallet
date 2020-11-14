@@ -15,6 +15,8 @@ public enum Coin {
     case bitcoinCash
     case dash
     case dogecoin
+    case exos
+    case ruta
     
     //https://github.com/satoshilabs/slips/blob/master/slip-0132.md
     public var privateKeyVersion: UInt32 {
@@ -28,6 +30,10 @@ public enum Coin {
             return 0x02FE52CC
         case .dogecoin:
             return 0x0488E1F4
+        case .exos:
+            return 0x0488ADE4
+        case .ruta:
+            return 0x0488ADE4
         default:
             fatalError("Not implemented")
         }
@@ -44,6 +50,10 @@ public enum Coin {
             return 0x4C
         case .dogecoin:
             return 0x1E
+        case .exos:
+            return 0x1C
+        case .ruta:
+            return 0x3C
         default:
             fatalError("Not implemented")
         }
@@ -60,6 +70,10 @@ public enum Coin {
             return 0x10
         case .dogecoin:
             return 0x16
+        case .exos:
+            return 0x57
+        case .ruta:
+            return 0x7A
         default:
             fatalError("Not implemented")
         }
@@ -77,6 +91,10 @@ public enum Coin {
             return 0xB0
         case .dash:
             return 0xCC
+        case .exos:
+            return 0x9C
+        case .ruta:
+            return 0xBC
         default:
             fatalError("Not implemented")
         }
@@ -110,6 +128,11 @@ public enum Coin {
             return 60
         case .bitcoinCash:
             return 145
+        case .exos:
+            return 248
+        case .ruta:
+            return 462
+        
         }
     }
     
@@ -125,7 +148,22 @@ public enum Coin {
             return "dogecoin"
         case .dash:
             return "dash"
+        case .exos:
+            return "exos"
+        case .ruta:
+            return "rutanio"
         default: return ""
+        }
+    }
+    
+    public var seedString: String {
+        switch self {
+        case .exos:
+            return "CivX seed"
+        case .ruta:
+            return "Rutanio seed"
+        default:
+            return "Bitcoin seed"
         }
     }
 }
