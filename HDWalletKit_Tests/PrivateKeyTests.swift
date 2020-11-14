@@ -35,7 +35,7 @@ class PrivateKeyTests: XCTestCase {
         }
     }
     
-    func testDogecoin() {
+ /*   func testDogecoin() {
          let address = "DHhBBVF46Wzc8pR6swZD9GoDdX8x7MDgvw"
          let rawPk = "0e66055a963cc3aecb185cf795de476cf290c88db671297da041b7f7377e6f9c"
          
@@ -45,7 +45,7 @@ class PrivateKeyTests: XCTestCase {
          [hexPk, uncompressedPk, compressedPk].forEach {
              testImportFromPK(coin: .bitcoinCash, privateKey: $0, address: address, raw: rawPk)
          }
-    }
+    }*/
     
     func testLitecoin() {
         let address = "Lbre6AY3tc8X2GJ2tKERVvcCA4S2EzF6wJ"
