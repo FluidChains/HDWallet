@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'HDWalletKit'
-  s.version          = '0.3.7'
+  s.version          = '1.3.7'
   s.summary          = 'Hierarchical Deterministic(HD) wallet for cryptocurrencies in Swift'
   
   s.description      = <<-DESC
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/FluidChains/HDWallet.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE.md' }
   s.author           = { 'impl' => 'sergio.quintero@fluidchains.com' }
-  s.source           = { :git => 'https://github.com/FluidChains/HDWallet.git', :tag => s.version.to_s }
+  s.source           = { :git => 'file:///Users/sergioquintero/Fluidchains/FluidCERTS/HDWallet', :tag => s.version.to_s }
 
   s.swift_version= '5'
   s.static_framework  = true
@@ -22,6 +22,6 @@ Pod::Spec.new do |s|
   s.source_files = 'HDWalletKit/**/*.{swift}'
 
   s.dependency 'secp256k1.swift', '~> 0.1.4'
-  s.dependency 'CryptoSwift', '~> 1.0.0'
+  s.dependency 'CryptoSwift', '~> 1.3.2'
   
 end
